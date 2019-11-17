@@ -1,15 +1,16 @@
 #include <stdio.h>
 #include <SDL2/SDL.h>
 #include "window.h"
+#include "color.h"
 
 int main()
 {
     win* window = window_initialize("First window", 800, 600);
     
-    //Get window surface
+    color c = color_new(0x22, 0xa2, 0x2a);
 
     //Fill the surface white
-    SDL_FillRect(window->surface, NULL, SDL_MapRGB(window->surface->format, 0xaf, 0xaf, 0xFF ) );
+    SDL_FillRect(window->surface, NULL, SDL_MapRGB(window->surface->format, c.r, c.g, c.b));
 
     // A basic main loop to prevent blocking
     int is_running = 1;
