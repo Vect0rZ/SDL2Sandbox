@@ -7,10 +7,9 @@ int main()
 {
     win* window = window_initialize("First window", 800, 600);
     
-    color c = color_new(0x22, 0xa2, 0x2a);
-
-    //Fill the surface white
-    SDL_FillRect(window->surface, NULL, SDL_MapRGB(window->surface->format, c.r, c.g, c.b));
+    color background_color = color_new(0xaf, 0xfa, 0x2a);
+    //Fill the surface
+    window_fill(window, background_color);
 
     // A basic main loop to prevent blocking
     int is_running = 1;

@@ -28,9 +28,9 @@ win* window_initialize(char* name, int width, int height)
     return result;
 }
 
-void window_fill(win* window)
+void window_fill(win* window, color c)
 {
-    
+    SDL_FillRect(window->surface, NULL, SDL_MapRGB(window->surface->format, c.r, c.g, c.b));
 }
 
 void window_close(win* window)

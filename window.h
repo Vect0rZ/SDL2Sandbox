@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <SDL2/SDL.h>
+#include "color.h"
 
 typedef struct Window
 {
@@ -11,7 +12,7 @@ typedef struct Window
 } win;
 
 win* window_initialize(char* name, int width, int height);
-void window_fill(win* window);
+void window_fill(win* window, color c);
 void window_close(win* window);
 
 
